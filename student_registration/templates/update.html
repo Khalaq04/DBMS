@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Add Student</title>
+        <meta name="description" content="Add student page"/>
+    </head>
+
+    <body>
+        <div style="text-align: left; margin-left: 1%; margin-top: 2%;">
+            <h1>Add a Student</h1>
+        </div>
+
+        <form action='/student/{{ student["student_id"] }}/update' method="POST" id="update-form" style="text-align: left; margin-left: 1%; margin-top: 2%;">
+            <div>
+                <label>Roll Number:</label>
+                <input type="text" name="roll" required value='{{ student["roll_number"] }}'/>
+            </div>
+            <div style="margin-top: 2%;">
+                <label>First Name:</label>
+                <input type="text" name="f_name" required value='{{ student["first_name"] }}'/>
+            </div>
+            <div style="margin-top: 2%;">
+                <label>Last Name:</label>
+                <input type="text" name="l_name" 
+                    {% if student["last_name"] is not none %} value='{{ student["last_name"] }}' {% endif %}/>
+            </div>
+            <div style="margin-top: 2%;">
+                <label>
+                    Select Courses:
+                    <input type="checkbox" name="check" value="MAD I" {% for course in courses %} {% if course["course_name"] == "MAD I" %} checked {% endif %} {% endfor %}/>
+                    <label>MAD I</label>
+
+                    <input type="checkbox" name="check" value="DBMS" {% for course in courses %}{% if course["course_name"] == "DBMS" %}checked{% endif %}{% endfor %}/>
+                    <label>DBMS</label>
+
+                    <input type="checkbox" name="check" value="PDSA" {% for course in courses %}{% if course["course_name"] == "PDSA" %}checked{% endif %}{% endfor %}/>
+                    <label>PDSA</label>
+
+                    <input type="checkbox" name="check" value="BDM" {% for course in courses %}{% if course["course_name"] == "BDM" %}checked{% endif %}{% endfor %}/>
+                    <label>BDM</label>
+                </label>
+            </div>
+            
+            <div style="margin-top: 2%;">
+                <input type="submit" value = "Submit">
+            </div>
+        </form>
+
+    </body>
+</html>

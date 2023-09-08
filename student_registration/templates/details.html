@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Home</title>
+        <meta name="description" content="Details page"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    </head>
+
+    <body>
+            <div style="text-align: center; margin-top: 2%;">
+                <h1>Student Details</h1>
+            </div>
+
+            <table style="text-align: left; margin-left: 1%; margin-top: 2%;" id="personal-details">
+                <tr>
+                    <th>Roll Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+
+                <tr>
+                    <td>{{ student["roll_number"] }}</td>
+                    <td>{{ student["first_name"] }}</td>
+                    <td>{{ student["last_name"] }}</td>
+                </tr>
+            </table>
+
+            <div style="text-align: center; margin-top: 2%;">
+                <h1>Enrollment List</h1>
+            </div>
+
+            <table style="text-align: left; margin-left: 1%; margin-top: 2%;" id="enroll-table">
+                <tr>
+                    <th>S. No.</th>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Course Description</th>
+                </tr>
+
+                {% for course in courses %}
+                    <tr>
+                        <td>{{ course["course_id"] }}</td>
+                        <td>{{ course["course_code"] }}</td>
+                        <td>{{ course["course_name"] }}</td>
+                        <td>{{ course["course_description"] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <div class="row">
+                <div class="col-md-2" style="text-align: center; margin-left: 3.25%;">
+                    <div>
+                        <a href="{{ url_for('root') }}">Go Back</a>
+                    </div>
+                </div>
+            </div>
+
+    </body>
+</html>

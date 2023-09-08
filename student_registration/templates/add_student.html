@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Add Student</title>
+        <meta name="description" content="Add student page"/>
+    </head>
+
+    <body>
+        <div style="text-align: left; margin-left: 1%; margin-top: 2%;">
+            <h1>Add a Student</h1>
+        </div>
+
+        <form action="/student/create" method="POST" id="create-form" style="text-align: left; margin-left: 1%; margin-top: 2%;">
+            <div>
+                <label>Roll Number:</label>
+                <input type="text" name="roll" required />
+            </div>
+            <div style="margin-top: 2%;">
+                <label>First Name:</label>
+                <input type="text" name="f_name" required />
+            </div>
+            <div style="margin-top: 2%;">
+                <label>Last Name:</label>
+                <input type="text" name="l_name" />
+            </div>
+            <div style="margin-top: 2%;">
+                <label>
+                    Select Courses:
+                    <input type="checkbox" name="check" value="MAD I"/>
+                    <label>MAD I</label>
+
+                    <input type="checkbox" name="check" value="DBMS"/>
+                    <label>DBMS</label>
+
+                    <input type="checkbox" name="check" value="PDSA"/>
+                    <label>PDSA</label>
+
+                    <input type="checkbox" name="check" value="BDM"/>
+                    <label>BDM</label>
+                </label>
+            </div>
+            
+            <div style="margin-top: 2%;">
+                <input type="submit" value = "Submit">
+            </div>
+        </form>
+
+    </body>
+</html>
